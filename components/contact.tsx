@@ -3,22 +3,22 @@ import { ArrowUpRight } from "lucide-react"
 const links = [
   {
     label: "Email",
-    href: "mailto:hello@alexchen.design",
+    href: "mailto:aridantang@gmail.com",
     external: false
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/alexchen",
+    href: "https://linkedin.com/in/aridantang",
     external: true
   },
   {
     label: "Dribbble",
-    href: "https://dribbble.com/alexchen",
+    href: "https://dribbble.com/aridantang",
     external: true
   },
   {
-    label: "read.cv",
-    href: "https://read.cv/alexchen",
+    label: "Resume",
+    href: "https://drive.google.com/file/d/1MHQrBnMneU2d8j0rACndgNSoQIKdo8XV/view?usp=sharing",
     external: true
   }
 ]

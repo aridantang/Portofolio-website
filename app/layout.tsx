@@ -9,7 +9,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: 'Alex Chen — Product Designer',
+  title: 'Suryananda Aridantang — Product Designer',
   description: 'Product designer crafting thoughtful digital experiences',
   generator: 'v0.app',
   icons: {
