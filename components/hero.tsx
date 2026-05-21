@@ -6,12 +6,16 @@ export function Hero() {
           Suryananda Aridantang
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground">
-          Product Designer<span className="text-accent"> —</span>
+          <span className="font-semibold text-foreground">Product Designer</span><span className="text-accent"> —</span>
         </p>
-        <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-          Designing the tools that run businesses. 
-          7+ years making SaaS platforms, dashboards, and data-heavy products feel effortless.
-        </p>
+        <div className="space-y-2 max-w-xl">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            Designing the tools that run businesses.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            7+ years making SaaS platforms, dashboards, and data-heavy products feel effortless.
+          </p>
+        </div>
       </div>
     </section>
   )
