@@ -40,7 +40,7 @@ export function Contact() {
               href={link.href}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
-              className="group inline-flex items-center gap-1 text-foreground hover:text-muted-foreground transition-colors duration-200"
+              className="group inline-flex items-center gap-1 text-foreground hover:text-accent transition-colors duration-200"
             >
               <span className="text-base underline underline-offset-4">
                 {link.label}

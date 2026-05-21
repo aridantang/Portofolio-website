@@ -11,10 +11,15 @@ const navItems = [
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
+      
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0
+      setScrollProgress(Math.min(progress, 100))
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -30,12 +35,23 @@ export function Nav() {
     >
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between h-14">
-          <Link 
-            href="/" 
-            className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-          >
-            Alex Chen
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link 
+              href="/" 
+              className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+            >
+              Alex Chen
+            </Link>
+            
+            {/* Progress line */}
+            <div className="hidden sm:block w-24 md:w-32 h-px bg-border relative overflow-hidden">
+              <div 
+                className="absolute inset-y-0 left-0 bg-progress transition-all duration-150 ease-out"
+                style={{ width: `${scrollProgress}%` }}
+              />
+            </div>
+          </div>
+          
           <div className="flex items-center gap-6 md:gap-8">
             {navItems.map((item) => (
               <Link

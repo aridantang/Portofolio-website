@@ -37,7 +37,7 @@ export function Work() {
         </h2>
         <Link 
           href="/work"
-          className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
         >
           View all
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -58,7 +58,7 @@ export function Work() {
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/80 transition-colors duration-200">
+                <h3 className="text-lg font-medium text-foreground group-hover:text-accent transition-colors duration-200">
                   {project.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">
