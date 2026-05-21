@@ -44,11 +44,13 @@ export function Nav() {
             </Link>
             
             {/* Progress line */}
-            <div className="hidden sm:block w-24 md:w-32 h-px bg-border relative overflow-hidden">
-              <div 
-                className="absolute inset-y-0 left-0 bg-progress transition-all duration-150 ease-out"
-                style={{ width: `${scrollProgress}%` }}
-              />
+            <div className="hidden sm:flex items-center flex-1 max-w-[200px] md:max-w-[280px]">
+              <div className="w-full h-px bg-muted-foreground/30 relative overflow-hidden">
+                <div 
+                  className="absolute inset-y-0 left-0 bg-foreground transition-all duration-100 ease-out"
+                  style={{ width: `${scrollProgress}%` }}
+                />
+              </div>
             </div>
           </div>
           
