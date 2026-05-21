@@ -33,7 +33,7 @@ export function Work() {
     <section id="work" className="py-24 md:py-32">
       <div className="flex items-baseline justify-between mb-12">
         <h2 className="text-sm uppercase tracking-widest text-muted-foreground">
-          Selected Work
+          <span className="text-accent">/</span> Selected Work
         </h2>
         <Link 
           href="/work"

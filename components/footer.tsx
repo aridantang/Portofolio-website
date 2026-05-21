@@ -6,7 +6,7 @@ export function Footer() {
           © {new Date().getFullYear()} Alex Chen
         </p>
         <p className="text-sm text-muted-foreground">
-          Built with care
+          Built with <span className="text-accent">care</span>
         </p>
       </div>
     </footer>

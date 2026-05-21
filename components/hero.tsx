@@ -6,7 +6,7 @@ export function Hero() {
           Alex Chen
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground">
-          Product Designer
+          Product Designer<span className="text-accent"> —</span>
         </p>
         <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
           Crafting thoughtful digital experiences at the intersection of design and technology.
