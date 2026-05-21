@@ -29,10 +29,10 @@ export function About() {
         <div className="lg:col-span-8 space-y-12">
           <div className="space-y-6">
             <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-2xl">
-              {"I'm a product designer with 7+ years of experience creating digital products that balance user needs with business goals. Currently based in San Francisco."}
+              {"Senior Product Designer specializing in SaaS platforms, data visualization, and operational interfaces. With 7+ years of experience spanning fintech and consulting."}
             </p>
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
-              {"I've worked with startups and established companies across fintech, healthcare, and e-commerce. My approach combines deep user research with iterative prototyping to deliver experiences that feel intuitive and considered."}
+              {"Known for working closely with stakeholders to shape product direction from strategy through delivery, building design systems, owning end-to-end design processes, and delivering measurable outcomes across data-heavy B2B products."}
             </p>
           </div>
           
