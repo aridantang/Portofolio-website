@@ -6,7 +6,7 @@ export function Hero() {
           Suryananda Aridantang
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground">
-          Product Designer<span className="text-accent"> —</span>
+          <span className="font-semibold text-foreground">Product Designer</span><span className="text-accent"> —</span>
         </p>
         <div className="space-y-2 max-w-xl">
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
