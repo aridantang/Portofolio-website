@@ -34,27 +34,23 @@ export function Nav() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 md:px-8">
-        <div className="flex items-center justify-between h-14">
-          <div className="flex items-center gap-4">
-            <Link 
-              href="/" 
-              className="text-sm font-medium text-foreground hover:text-accent transition-colors"
-            >
-              Alex Chen
-            </Link>
-            
-            {/* Progress line */}
-            <div className="hidden sm:flex items-center flex-1 max-w-[200px] md:max-w-[280px]">
-              <div className="w-full h-px bg-muted-foreground/30 relative overflow-hidden">
-                <div 
-                  className="absolute inset-y-0 left-0 bg-foreground transition-all duration-100 ease-out"
-                  style={{ width: `${scrollProgress}%` }}
-                />
-              </div>
-            </div>
+        <div className="flex items-center h-14 gap-6 md:gap-8">
+          <Link 
+            href="/" 
+            className="text-sm font-medium text-foreground hover:text-accent transition-colors shrink-0"
+          >
+            Alex Chen
+          </Link>
+          
+          {/* Progress line */}
+          <div className="hidden sm:block flex-1 h-px bg-muted-foreground/30 relative overflow-hidden">
+            <div 
+              className="absolute inset-y-0 left-0 bg-foreground transition-all duration-100 ease-out"
+              style={{ width: `${scrollProgress}%` }}
+            />
           </div>
           
-          <div className="flex items-center gap-6 md:gap-8">
+          <div className="flex items-center gap-6 md:gap-8 shrink-0">
             {navItems.map((item) => (
               <Link
                 key={item.label}
