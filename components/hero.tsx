@@ -8,7 +8,7 @@ export function Hero() {
         <p className="text-lg md:text-xl text-muted-foreground">
           Product Designer<span className="text-accent"> —</span>
         </p>
-        <div className="space-y-4 max-w-xl">
+        <div className="space-y-2 max-w-xl">
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Designing the tools that run businesses.
           </p>
