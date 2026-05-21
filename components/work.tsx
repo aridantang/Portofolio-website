@@ -57,7 +57,7 @@ export function Work() {
                 </div>
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-baseline justify-between gap-4">
                   <h3 className="text-lg font-medium text-foreground group-hover:text-accent transition-colors duration-200">
                     {project.title}
