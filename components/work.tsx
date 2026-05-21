@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import { ArrowRight } from "lucide-react"
 
 const projects = [
   {
@@ -7,37 +7,42 @@ const projects = [
     title: "Fintech Mobile App",
     tags: "Mobile · B2B · 2024",
     description: "Redesigning the mobile banking experience for small business owners.",
-    image: "/projects/fintech.jpg"
   },
   {
     slug: "saas-dashboard",
     title: "Analytics Dashboard",
     tags: "Web · SaaS · 2024",
     description: "A data visualization platform for marketing teams.",
-    image: "/projects/dashboard.jpg"
   },
   {
     slug: "health-platform",
     title: "Health Platform",
     tags: "Mobile · B2C · 2023",
     description: "Connecting patients with healthcare providers through telehealth.",
-    image: "/projects/health.jpg"
   },
   {
     slug: "ecommerce-redesign",
     title: "E-commerce Redesign",
     tags: "Web · B2C · 2023",
     description: "Modernizing the shopping experience for a sustainable fashion brand.",
-    image: "/projects/ecommerce.jpg"
   }
 ]
 
 export function Work() {
   return (
     <section id="work" className="py-24 md:py-32">
-      <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-12">
-        Selected Work
-      </h2>
+      <div className="flex items-baseline justify-between mb-12">
+        <h2 className="text-sm uppercase tracking-widest text-muted-foreground">
+          Selected Work
+        </h2>
+        <Link 
+          href="/work"
+          className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          View all
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {projects.map((project) => (
           <Link 

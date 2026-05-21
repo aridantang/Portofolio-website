@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const geist = Geist({ 
   subsets: ["latin"],
   variable: "--font-sans"
 });
@@ -38,7 +38,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${geist.variable} font-sans antialiased`}>
+        <div className="grain" />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
