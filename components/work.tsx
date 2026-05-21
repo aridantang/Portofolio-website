@@ -33,7 +33,7 @@ export function Work() {
     <section id="work" className="py-24 md:py-32">
       <div className="flex items-baseline justify-between mb-12">
         <h2 className="text-sm uppercase tracking-widest text-muted-foreground">
-          <span className="text-accent">/</span> Selected Work
+          <span className="text-accent">//</span> Selected Work
         </h2>
         <Link 
           href="/work"
@@ -58,12 +58,14 @@ export function Work() {
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-medium text-foreground group-hover:text-accent transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {project.tags}
-                </p>
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="text-lg font-medium text-foreground group-hover:text-accent transition-colors duration-200">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground shrink-0">
+                    {project.tags}
+                  </p>
+                </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {project.description}
                 </p>

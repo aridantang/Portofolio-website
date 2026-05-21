@@ -27,7 +27,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32">
       <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-12">
-        <span className="text-accent">/</span> Contact
+        <span className="text-accent">//</span> Contact
       </h2>
       <div className="space-y-8">
         <p className="text-lg md:text-xl text-foreground max-w-xl">

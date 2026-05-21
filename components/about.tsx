@@ -13,7 +13,7 @@ export function About() {
   return (
     <section id="about" className="py-24 md:py-32">
       <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-12">
-        <span className="text-accent">/</span> About
+        <span className="text-accent">//</span> About
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         {/* Photo */}
