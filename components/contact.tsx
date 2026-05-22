@@ -29,7 +29,7 @@ export function Contact() {
       <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-16">
         <span className="text-accent">//</span> Contact
       </h2>
-      
+
       <div className="grid md:grid-cols-2 gap-16 md:gap-24">
         {/* Left column - CTA */}
         <div className="space-y-8">
@@ -40,16 +40,16 @@ export function Contact() {
             Currently open to full-time roles, contract work, and interesting collaborations. Based in San Francisco, working globally.
           </p>
           <a
-            href="mailto:hello@alexchen.design"
+            href="mailto:aridantang@gmail.com"
             className="group inline-flex items-center gap-3 text-foreground hover:text-accent transition-colors duration-200"
           >
             <span className="text-lg font-medium underline underline-offset-4 decoration-muted-foreground/50 group-hover:decoration-accent">
-              hello@alexchen.design
+              aridantang@gmail.com
             </span>
             <ArrowUpRight className="w-5 h-5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
           </a>
         </div>
-        
+
         {/* Right column - Links */}
         <div className="space-y-6">
           <p className="text-sm uppercase tracking-widest text-muted-foreground">
