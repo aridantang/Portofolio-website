@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Nav } from "@/components/nav"
@@ -88,3 +89,26 @@ export default async function AllWorkPage() {
     </>
   )
 }
+=======
+import { Nav } from "@/components/nav"
+import { Hero } from "@/components/hero"
+import { Work } from "@/components/work"
+import { About } from "@/components/about"
+import { Contact } from "@/components/contact"
+import { Footer } from "@/components/footer"
+
+export default function Home() {
+  return (
+    <>
+      <Nav />
+      <main className="max-w-5xl mx-auto px-6 md:px-8 pt-14">
+        <Hero />
+        <Work />
+        <About />
+        <Contact />
+        <Footer />
+      </main>
+    </>
+  )
+}
+>>>>>>> 492992c951acc9ced779c51d746d721854b4e388
