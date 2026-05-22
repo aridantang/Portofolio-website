@@ -1,6 +1,6 @@
 const skills = [
   "Figma",
-  "Prototyping", 
+  "Prototyping",
   "User Research",
   "Design Systems",
   "Interaction Design",
@@ -19,12 +19,14 @@ export function About() {
         {/* Photo */}
         <div className="lg:col-span-4">
           <div className="aspect-[3/4] bg-card rounded-lg overflow-hidden">
-            <div className="w-full h-full bg-muted flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Photo</span>
-            </div>
+            <img
+              src="/photo.jpg"
+              alt="Profile photo"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
-        
+
         {/* Bio and Skills */}
         <div className="lg:col-span-8 space-y-12">
           <div className="space-y-6">
@@ -35,7 +37,7 @@ export function About() {
               {"Known for working closely with stakeholders to shape product direction from strategy through delivery, building design systems, owning end-to-end design processes, and delivering measurable outcomes across data-heavy B2B products."}
             </p>
           </div>
-          
+
           {/* Skills */}
           <div className="space-y-4">
             <h3 className="text-sm uppercase tracking-widest text-muted-foreground">
@@ -43,7 +45,7 @@ export function About() {
             </h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
-                <span 
+                <span
                   key={skill}
                   className="px-3 py-1.5 text-sm text-foreground bg-card border border-border rounded-md"
                 >
