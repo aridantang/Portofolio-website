@@ -11,14 +11,14 @@ function urlFor(source: any) {
 }
 
 async function getCaseStudies() {
-  return await client.fetch(`*[_type == "caseStudy"] | order(_createdAt desc) {
+  return await client.fetch(`*[_type == "caseStudy"] | order(orderRank asc) {
     _id,
     title,
     tags,
     description,
     thumbnail,
     year
-  }`)
+  }`, {}, { next: { revalidate: 0 } })
 }
 
 export default async function AllWorkPage() {

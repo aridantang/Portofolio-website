@@ -9,19 +9,18 @@ function urlFor(source: any) {
 }
 
 async function getCaseStudies() {
-  return await client.fetch(`*[_type == "caseStudy"] | order(_createdAt desc)[0..3] {
+  return await client.fetch(`*[_type == "caseStudy"] | order(orderRank asc)[0..3] {
     _id,
     title,
     tags,
     description,
     thumbnail,
     year
-  }`)
+  }`, {}, { next: { revalidate: 0 } })
 }
 
 export async function Work() {
   const projects = await getCaseStudies()
-
   return (
     <section id="work" className="py-24 md:py-32">
       <div className="flex items-baseline justify-between mb-12">
