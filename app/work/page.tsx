@@ -23,7 +23,6 @@ async function getCaseStudies() {
 
 export default async function AllWorkPage() {
   const projects = await getCaseStudies()
-
   return (
     <>
       <Nav />
@@ -35,7 +34,6 @@ export default async function AllWorkPage() {
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back home
         </Link>
-
         <header className="mb-16">
           <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-4">
             All Work
@@ -44,7 +42,6 @@ export default async function AllWorkPage() {
             A collection of projects spanning product design, user research, and design systems across various industries.
           </p>
         </header>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {projects.map((project: any) => (
             <Link
@@ -53,4 +50,37 @@ export default async function AllWorkPage() {
               className="group block"
             >
               <article className="space-y-4">
-                <div className="aspect-[4/3] bg-card rounded-lg ov
+                <div className="aspect-[4/3] bg-card rounded-lg overflow-hidden relative">
+                  {project.thumbnail ? (
+                    <img
+                      src={urlFor(project.thumbnail).width(800).url()}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-muted flex items-center justify-center">
+                      <span className="text-muted-foreground text-sm">No image</span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/80 transition-colors duration-200">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {project.tags?.join(" · ")} {project.year && `· ${project.year}`}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
+      </main>
+      <Footer />
+    </>
+  )
+}
