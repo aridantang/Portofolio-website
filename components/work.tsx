@@ -1,41 +1,34 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { client } from "@/sanity/lib/client"
+import imageUrlBuilder from "@sanity/image-url"
 
-const projects = [
-  {
-    slug: "fintech-app",
-    title: "Fintech Mobile App",
-    tags: "Mobile · B2B · 2024",
-    description: "Redesigning the mobile banking experience for small business owners.",
-  },
-  {
-    slug: "saas-dashboard",
-    title: "Analytics Dashboard",
-    tags: "Web · SaaS · 2024",
-    description: "A data visualization platform for marketing teams.",
-  },
-  {
-    slug: "health-platform",
-    title: "Health Platform",
-    tags: "Mobile · B2C · 2023",
-    description: "Connecting patients with healthcare providers through telehealth.",
-  },
-  {
-    slug: "ecommerce-redesign",
-    title: "E-commerce Redesign",
-    tags: "Web · B2C · 2023",
-    description: "Modernizing the shopping experience for a sustainable fashion brand.",
-  }
-]
+const builder = imageUrlBuilder(client)
+function urlFor(source: any) {
+  return builder.image(source)
+}
 
-export function Work() {
+async function getCaseStudies() {
+  return await client.fetch(`*[_type == "caseStudy"] | order(_createdAt desc)[0..3] {
+    _id,
+    title,
+    tags,
+    description,
+    thumbnail,
+    year
+  }`)
+}
+
+export async function Work() {
+  const projects = await getCaseStudies()
+
   return (
     <section id="work" className="py-24 md:py-32">
       <div className="flex items-baseline justify-between mb-12">
         <h2 className="text-sm uppercase tracking-widest text-muted-foreground">
           <span className="text-accent">//</span> Selected Work
         </h2>
-        <Link 
+        <Link
           href="/work"
           className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
         >
@@ -44,17 +37,25 @@ export function Work() {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        {projects.map((project) => (
-          <Link 
-            key={project.slug} 
-            href={`/work/${project.slug}`}
+        {projects.map((project: any) => (
+          <Link
+            key={project._id}
+            href={`/work/${project._id}`}
             className="group block"
           >
             <article className="space-y-4">
               <div className="aspect-[4/3] bg-card rounded-lg overflow-hidden relative">
-                <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">Thumbnail</span>
-                </div>
+                {project.thumbnail ? (
+                  <img
+                    src={urlFor(project.thumbnail).width(800).url()}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
+                    <span className="text-muted-foreground text-sm">No image</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
               </div>
               <div className="space-y-3">
@@ -63,7 +64,7 @@ export function Work() {
                     {project.title}
                   </h3>
                   <p className="text-sm text-muted-foreground shrink-0">
-                    {project.tags}
+                    {project.tags?.join(" · ")} {project.year && `· ${project.year}`}
                   </p>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">

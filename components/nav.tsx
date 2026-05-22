@@ -39,7 +39,7 @@ export function Nav() {
             href="/" 
             className="text-sm font-medium text-foreground hover:text-accent transition-colors shrink-0"
           >
-            Alex Chen
+            Aridantang
           </Link>
           
           {/* Progress line */}
