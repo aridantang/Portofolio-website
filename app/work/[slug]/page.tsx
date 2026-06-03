@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { client } from "@/sanity/lib/client"
 import imageUrlBuilder from "@sanity/image-url"
+import { ImageCarousel } from "@/components/image-carousel"
 
 const builder = imageUrlBuilder(client)
 function urlFor(source: any) {
@@ -20,7 +21,7 @@ async function getCaseStudy(id: string) {
     problem,
     outcome,
     year
-  }`, { id })
+  }`, { id }, { next: { revalidate: 0 } })
 }
 
 export default async function CaseStudyPage({
@@ -41,6 +42,11 @@ export default async function CaseStudyPage({
       </main>
     )
   }
+
+  const allImages = [
+    project.thumbnail ? urlFor(project.thumbnail).width(1200).url() : null,
+    ...(project.processImages?.map((img: any) => urlFor(img).width(1200).url()) ?? [])
+  ].filter(Boolean) as string[]
 
   return (
     <main className="max-w-5xl mx-auto px-6 md:px-8 py-24">
@@ -65,14 +71,8 @@ export default async function CaseStudyPage({
           </p>
         </header>
 
-        {project.thumbnail && (
-          <div className="aspect-video bg-card rounded-lg overflow-hidden">
-            <img
-              src={urlFor(project.thumbnail).width(1200).url()}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        {allImages.length > 0 && (
+          <ImageCarousel images={allImages} />
         )}
 
         {project.overview && (
@@ -99,30 +99,10 @@ export default async function CaseStudyPage({
           </section>
         )}
 
-        {project.processImages && project.processImages.length > 0 && (
-          <section className="space-y-6">
-            <div className="space-y-2">
-              <span className="text-xs uppercase tracking-widest text-muted-foreground/70">03</span>
-              <h2 className="text-sm uppercase tracking-widest text-muted-foreground">Process</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.processImages.map((img: any, i: number) => (
-                <div key={i} className="aspect-[4/3] bg-card rounded-lg overflow-hidden">
-                  <img
-                    src={urlFor(img).width(800).url()}
-                    alt={`Process image ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
         {project.outcome && (
           <section className="space-y-6">
             <div className="space-y-2">
-              <span className="text-xs uppercase tracking-widest text-muted-foreground/70">04</span>
+              <span className="text-xs uppercase tracking-widest text-muted-foreground/70">03</span>
               <h2 className="text-sm uppercase tracking-widest text-muted-foreground">Outcome</h2>
             </div>
             <p className="text-lg text-foreground/90 leading-relaxed max-w-3xl">

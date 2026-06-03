@@ -9,7 +9,7 @@ function urlFor(source: any) {
 }
 
 async function getCaseStudies() {
-  return await client.fetch(`*[_type == "caseStudy"] | order(orderRank asc)[0..3] {
+  return await client.fetch(`*[_type == "caseStudy" && featured == true] | order(order asc) {
     _id,
     title,
     tags,

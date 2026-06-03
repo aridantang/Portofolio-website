@@ -1,11 +1,20 @@
-import {DocumentTextIcon} from '@sanity/icons'
-import {defineArrayMember, defineField, defineType} from 'sanity'
-
 export default {
   name: 'caseStudy',
   title: 'Case Studies',
   type: 'document',
   fields: [
+    {
+      name: 'featured',
+      title: 'Show on Homepage',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      description: 'Lower number shows first. e.g. 1, 2, 3...',
+    },
     {
       name: 'title',
       title: 'Project Title',
@@ -26,6 +35,12 @@ export default {
       name: 'thumbnail',
       title: 'Thumbnail Image',
       type: 'image',
+    },
+    {
+      name: 'processImages',
+      title: 'Process Images',
+      type: 'array',
+      of: [{ type: 'image' }],
     },
     {
       name: 'overview',

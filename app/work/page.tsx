@@ -11,7 +11,7 @@ function urlFor(source: any) {
 }
 
 async function getCaseStudies() {
-  return await client.fetch(`*[_type == "caseStudy"] | order(orderRank asc) {
+  return await client.fetch(`*[_type == "caseStudy"] | order(order asc) {
     _id,
     title,
     tags,
