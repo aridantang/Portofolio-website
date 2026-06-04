@@ -23,7 +23,7 @@ export async function Work() {
   const projects = await getCaseStudies()
   return (
     <section id="work" className="py-24 md:py-32">
-      <div className="flex items-baseline justify-between mb-12">
+      <div className="flex items-baseline justify-between mb-4">
         <h2 className="text-sm uppercase tracking-widest text-muted-foreground">
           <span className="text-accent">//</span> Selected Work
         </h2>
@@ -35,6 +35,11 @@ export async function Work() {
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </div>
+
+      <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl mb-16 leading-snug">
+        Handcrafted with love and a dash of caffeine.
+      </p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {projects.map((project: any) => (
           <Link
