@@ -6,7 +6,7 @@ export function Footer() {
           © {new Date().getFullYear()} Suryananda Aridantang
         </p>
         <p className="text-sm text-muted-foreground">
-          Built with <span className="text-accent">care</span>
+          Built with <span className="text-accent">caffeine</span>
         </p>
       </div>
     </footer>

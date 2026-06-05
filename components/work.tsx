@@ -28,50 +28,52 @@ export async function Work() {
           <span className="text-accent">//</span> Selected Work
         </h2>
         <Link
-          href="/work"
-          className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
-        >
-          View all
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-        </Link>
+  href="/work"
+  className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-md hover:border-accent hover:text-accent transition-colors"
+>
+  View all work
+  <ArrowRight className="w-4 h-4" />
+</Link>
       </div>
 
       <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl mb-16 leading-snug">
         Handcrafted with love and a dash of caffeine.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      <div className="space-y-12 md:space-y-16">
         {projects.map((project: any) => (
           <Link
             key={project._id}
             href={`/work/${project._id}`}
             className="group block"
           >
-            <article className="space-y-4">
-              <div className="aspect-[4/3] bg-card rounded-lg overflow-hidden relative">
+            <article className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-start">
+              {/* Image - 1/2 */}
+              <div className="md:col-span-2 aspect-[16/9] bg-card rounded-lg overflow-hidden">
                 {project.thumbnail ? (
                   <img
-                    src={urlFor(project.thumbnail).width(800).url()}
+                    src={urlFor(project.thumbnail).width(1366).height(768).url()}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-300"
                   />
                 ) : (
-                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
+                  <div className="w-full h-full bg-muted flex items-center justify-center">
                     <span className="text-muted-foreground text-sm">No image</span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
               </div>
-              <div className="space-y-3">
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-lg font-medium text-foreground group-hover:text-accent transition-colors duration-200">
+
+              {/* Content - 1/2 */}
+              <div className="md:col-span-3 space-y-4">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-medium text-foreground group-hover:text-accent transition-colors duration-200 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground shrink-0">
+                  <p className="text-sm text-muted-foreground">
                     {project.tags?.join(" · ")} {project.year && `· ${project.year}`}
                   </p>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground leading-relaxed max-w-lg">
                   {project.description}
                 </p>
               </div>

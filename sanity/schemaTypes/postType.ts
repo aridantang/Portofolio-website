@@ -28,8 +28,14 @@ export default {
     },
     {
       name: 'description',
-      title: 'Short Description',
+      title: 'Short Description (for work grid)',
       type: 'text',
+    },
+    {
+      name: 'workDescription',
+      title: 'Work Description (for case study page)',
+      type: 'text',
+      description: 'Separate description used on the case study detail page',
     },
     {
       name: 'thumbnail',
@@ -38,7 +44,7 @@ export default {
     },
     {
       name: 'processImages',
-      title: 'Process Images',
+      title: 'Process Images (first 5 used in carousel)',
       type: 'array',
       of: [{ type: 'image' }],
     },

@@ -37,7 +37,7 @@ export function Contact() {
             {"Let's build something together."}
           </h3>
           <p className="text-base text-muted-foreground leading-relaxed max-w-md">
-            Currently open to full-time roles, contract work, and interesting collaborations. Based in San Francisco, working globally.
+            Currently open to full-time roles, contract work, and interesting collaborations. Based in Jakarta, working globally.
           </p>
           <a
             href="mailto:aridantang@gmail.com"

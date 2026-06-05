@@ -18,7 +18,7 @@ export function About() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         {/* Photo */}
         <div className="lg:col-span-4">
-          <div className="aspect-[3/4] bg-card rounded-lg overflow-hidden">
+          <div className="aspect-[3/4] bg-card rounded-lg overflow-hidden max-w-xs mx-auto lg:mx-0">
             <img
               src="/photo.jpg"
               alt="Profile photo"
