@@ -23,22 +23,25 @@ export async function Work() {
   const projects = await getCaseStudies()
   return (
     <section id="work" className="py-24 md:py-32">
-      <div className="flex items-baseline justify-between mb-4">
-        <h2 className="text-sm uppercase tracking-widest text-muted-foreground">
-          <span className="text-accent">//</span> Selected Work
-        </h2>
-        <Link
-  href="/work"
-  className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-md hover:border-accent hover:text-accent transition-colors"
->
-  View all work
-  <ArrowRight className="w-4 h-4" />
-</Link>
-      </div>
-
-      <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl mb-16 leading-snug">
-        Handcrafted with love and a dash of caffeine.
-      </p>
+      <div className="mb-12">
+  <div className="flex items-center gap-6 mb-6">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-accent shrink-0">
+      <path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"/>
+    </svg>
+  </div>
+  <div className="flex items-center justify-between gap-6">
+    <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl leading-snug">
+      Handcrafted with love and a dash of caffeine.
+    </p>
+    <Link
+      href="/work"
+      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-md hover:border-accent hover:text-accent transition-colors shrink-0"
+    >
+      View all work
+      <ArrowRight className="w-4 h-4" />
+    </Link>
+  </div>
+</div>
 
       <div className="space-y-12 md:space-y-16">
         {projects.map((project: any) => (

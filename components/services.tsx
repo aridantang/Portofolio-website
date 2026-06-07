@@ -5,15 +5,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const services = [
   {
     number: "01",
-    title: "B2B SaaS Design",
+    title: "B2B SaaS Enterprise Products",
     description:
-      "Designing complex platforms for fintech, regtech, and enterprise — from lending tools used by major Indonesian banks to operational interfaces that make data-heavy workflows feel effortless.",
+      "Designing complex platforms for fintech, regtech, and enterprise — from lending tools used by major Indonesian banks to operational interfaces.",
   },
   {
     number: "02",
-    title: "Web3 & Decentralized Products",
+    title: "Web3 & Crypto Projects",
     description:
-      "Crafting interfaces for the decentralized web, including federated social platforms, NFT tooling, and blockchain-adjacent products where trust and clarity are everything.",
+      "Crafting interfaces for the decentralized web, including federated social platforms, NFT tooling, and blockchain-adjacent products.",
   },
   {
     number: "03",
@@ -25,7 +25,7 @@ const services = [
     number: "04",
     title: "End-to-End Product Consulting",
     description:
-      "Embedded with cross-functional teams across industries — from discovery and research through to delivery and handoff — shaping product direction from the ground up.",
+      "Embedded with cross-functional teams across industries — from discovery and research through to delivery and handoff.",
   },
 ]
 
@@ -37,12 +37,16 @@ export function Services() {
 
   return (
     <section id="services" className="py-24 md:py-32">
-      <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
-        <span className="text-accent">//</span> Services
-      </h2>
-      <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl mb-16 leading-snug">
-        Custom design solutions for your requirements.
-      </p>
+      <div className="mb-12">
+        <div className="flex items-center gap-6 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-accent shrink-0">
+            <path d="M12.983 21.186a1 1 0 0 1-1.966 0 10 10 0 0 0-8.203-8.203 1 1 0 0 1 0-1.966 10 10 0 0 0 8.203-8.203 1 1 0 0 1 1.966 0 10 10 0 0 0 8.203 8.203 1 1 0 0 1 0 1.966 10 10 0 0 0-8.203 8.203"/>
+  </svg>
+        </div>
+        <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl leading-snug">
+          Custom design solutions for your requirements.
+        </p>
+      </div>
 
       {/* Desktop Grid */}
       <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

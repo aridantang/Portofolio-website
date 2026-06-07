@@ -53,13 +53,12 @@ export function Hero() {
         </div>
 
         {/* Headline */}
-        <div className="space-y-4 mb-10">
+          <div className="space-y-4 mb-10">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-foreground text-balance leading-none">
-            Suryananda Aridantang <br />
-            <span className="text-muted-foreground">Product Designer</span>
+            Designing interfaces that simplify <span className="text-accent">complexity</span>
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
-            Designing the tools that run businesses.
+            Suryananda Aridantang - Product Designer
           </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
             7+ years making SaaS platforms, dashboards, and data-heavy products feel effortless.
