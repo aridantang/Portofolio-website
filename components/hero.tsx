@@ -10,11 +10,16 @@ function urlFor(source: any) {
   return builder.image(source)
 }
 
+const words = ["complexity.", "ambiguity.", "fragility.", "obscurity."]
+
 export function Hero() {
   const [images, setImages] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const [displayedText, setDisplayedText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
     const fetchHeroImages = async () => {
@@ -38,6 +43,31 @@ export function Hero() {
     fetchHeroImages()
   }, [])
 
+  // Typewriter effect
+  useEffect(() => {
+    const currentWord = words[currentWordIndex]
+    let timer: NodeJS.Timeout
+
+    if (!isDeleting && displayedText !== currentWord) {
+      timer = setTimeout(() => {
+        setDisplayedText(currentWord.slice(0, displayedText.length + 1))
+      }, 50)
+    } else if (isDeleting && displayedText !== "") {
+      timer = setTimeout(() => {
+        setDisplayedText(displayedText.slice(0, -1))
+      }, 30)
+    } else if (displayedText === currentWord && !isDeleting) {
+      timer = setTimeout(() => {
+        setIsDeleting(true)
+      }, 2000)
+    } else if (displayedText === "" && isDeleting) {
+      setIsDeleting(false)
+      setCurrentWordIndex((prev) => (prev + 1) % words.length)
+    }
+
+    return () => clearTimeout(timer)
+  }, [displayedText, isDeleting, currentWordIndex])
+
   const handleImageClick = (index: number) => {
     setSelectedIndex(index % images.length)
     setLightboxOpen(true)
@@ -53,10 +83,14 @@ export function Hero() {
         </div>
 
         {/* Headline */}
-          <div className="space-y-4 mb-10">
+        <div className="space-y-4 mb-10">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-foreground text-balance leading-none">
-            Designing interfaces that simplify <span className="text-accent">complexity</span>
-          </h1>
+  Designing interfaces that simplify{" "}
+  <span className="text-accent inline-block min-w-[200px] md:min-w-[300px]">
+    {displayedText}
+    <span className="animate-pulse text-foreground" style={{animationDuration: '0.5s'}}>|</span>
+  </span>
+</h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
             Suryananda Aridantang - Product Designer
           </p>

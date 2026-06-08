@@ -33,13 +33,6 @@ export async function Work() {
     <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl leading-snug">
       Handcrafted with love and a dash of caffeine.
     </p>
-    <Link
-      href="/work"
-      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-md hover:border-accent hover:text-accent transition-colors shrink-0"
-    >
-      View all work
-      <ArrowRight className="w-4 h-4" />
-    </Link>
   </div>
 </div>
 
@@ -83,6 +76,15 @@ export async function Work() {
             </article>
           </Link>
         ))}
+      </div>
+      <div className="pt-12 mt-4">
+        <Link
+          href="/work"
+          className="w-full inline-flex items-center justify-center h-12 px-6 py-0 text-sm font-medium text-foreground no-underline align-middle transition-all duration-300 ease-in-out bg-transparent border-2 border-border border-solid rounded-lg cursor-pointer select-none hover:text-accent hover:border-accent focus:shadow-xs focus:no-underline"
+        >
+          Explore all projects
+          <ArrowRight className="w-4 h-4 ml-2" />
+        </Link>
       </div>
     </section>
   )

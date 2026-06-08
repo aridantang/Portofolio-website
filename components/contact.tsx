@@ -12,8 +12,8 @@ const links = [
     external: true
   },
   {
-    label: "Dribbble",
-    href: "https://dribbble.com/aridantang",
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~018772131c5cb25d57",
     external: true
   },
   {
