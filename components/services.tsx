@@ -40,8 +40,8 @@ export function Services() {
       <div className="mb-12">
         <div className="flex items-center gap-6 mb-6">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-accent shrink-0">
-            <path d="M12.983 21.186a1 1 0 0 1-1.966 0 10 10 0 0 0-8.203-8.203 1 1 0 0 1 0-1.966 10 10 0 0 0 8.203-8.203 1 1 0 0 1 1.966 0 10 10 0 0 0 8.203 8.203 1 1 0 0 1 0 1.966 10 10 0 0 0-8.203 8.203"/>
-  </svg>
+            <path d="M12.983 21.186a1 1 0 0 1-1.966 0 10 10 0 0 0-8.203-8.203 1 1 0 0 1 0-1.966 10 10 0 0 0 8.203-8.203 1 1 0 0 1 1.966 0 10 10 0 0 0 8.203 8.203 1 1 0 0 1 0 1.966 10 10 0 0 0-8.203 8.203" />
+          </svg>
         </div>
         <p className="text-2xl md:text-3xl font-medium text-foreground max-w-xl leading-snug">
           Custom design solutions for your requirements.
@@ -51,9 +51,9 @@ export function Services() {
       {/* Desktop Grid */}
       <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, i) => (
-          <div key={i} className="p-6 border border-border rounded-lg hover:border-border/60 transition-colors group">
+          <div key={i} className="p-6 border border-border rounded-lg hover:border-accent transition-all duration-1000 ease-in-out group">
             <span className="text-xs text-muted-foreground/50 font-mono">{service.number}</span>
-            <h3 className="text-lg font-medium text-foreground mt-3 mb-3 group-hover:text-accent transition-colors">
+            <h3 className="text-lg font-medium text-foreground mt-3 mb-3">
               {service.title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -97,11 +97,10 @@ export function Services() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                i === current
-                  ? "bg-foreground w-4"
-                  : "bg-foreground/40 hover:bg-foreground/60"
-              }`}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === current
+                ? "bg-foreground w-4"
+                : "bg-foreground/40 hover:bg-foreground/60"
+                }`}
             />
           ))}
         </div>

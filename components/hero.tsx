@@ -27,7 +27,7 @@ export function Hero() {
         const settings = await client.fetch(`*[_type == "siteSettings"][0] {
           heroImages
         }`, {}, { next: { revalidate: 0 } })
-        
+
         const heroImages = (settings?.heroImages || []).map((img: any) => ({
           thumbnail: urlFor(img).width(600).height(400).url(),
           hd: urlFor(img).width(2000).height(1333).url(),
@@ -85,12 +85,12 @@ export function Hero() {
         {/* Headline */}
         <div className="space-y-4 mb-10">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-foreground text-balance leading-none">
-  Designing interfaces that simplify{" "}
-  <span className="text-accent inline-block min-w-[200px] md:min-w-[300px]">
-    {displayedText}
-    <span className="animate-pulse text-foreground" style={{animationDuration: '0.5s'}}>|</span>
-  </span>
-</h1>
+            Designing interfaces that simplify{" "}
+            <span className="text-accent inline-block min-w-[200px] md:min-w-[300px]">
+              {displayedText}
+              <span className="animate-pulse text-foreground" style={{ animationDuration: '0.5s' }}>|</span>
+            </span>
+          </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
             Suryananda Aridantang - Product Designer
           </p>

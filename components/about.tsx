@@ -1,12 +1,12 @@
 const skills = [
-  "Figma",
-  "Prototyping",
+  "Product Thinking",
   "User Research",
-  "Design Systems",
+  "Data Visualization",
+  "Data Analysis",
+  "Information Architecture",
   "Interaction Design",
-  "Framer",
-  "HTML/CSS",
-  "Usability Testing"
+  "Stakeholder Management",
+  "Design Strategy"
 ]
 
 export function About() {
