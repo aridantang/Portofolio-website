@@ -14,7 +14,7 @@ function urlFor(source: any) {
 export default function CaseStudyPage({
   params
 }: {
-  params: Promise<{ slug: string }>
+  params: { slug: string } | Promise<{ slug: string }>
 }) {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [carouselIndex, setCarouselIndex] = useState(0)
@@ -24,7 +24,15 @@ export default function CaseStudyPage({
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const { slug } = await params
+        const resolvedParams = await Promise.resolve(params)
+        const slug = resolvedParams.slug
+
+        if (!slug) {
+          setProject(null)
+          setLoading(false)
+          return
+        }
+
         const data = await client.fetch(
           `*[_type == "caseStudy" && _id == $id][0] {
             _id,
