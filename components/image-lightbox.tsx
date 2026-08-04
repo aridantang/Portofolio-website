@@ -47,8 +47,12 @@ export function ImageLightbox({
     <div className="fixed inset-0 z-50 bg-background/98 backdrop-blur-md flex items-center justify-center p-4" onClick={onClose}>
       {/* Close button */}
       <button
-        onClick={onClose}
-        className="absolute top-6 right-6 w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-muted transition-colors z-10"
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation()
+          onClose()
+        }}
+        className="absolute top-6 right-6 w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-muted transition-colors z-30"
       >
         <X className="w-5 h-5 text-foreground" />
       </button>
